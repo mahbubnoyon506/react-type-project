@@ -3,7 +3,8 @@ import React from 'react';
 
 type person ={
     name: string;
-    messages: number
+    messages: number;
+    isLoggedIn?: boolean
 }
 
 const Name = ({name, messages}: person) => {
