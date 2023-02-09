@@ -2,13 +2,15 @@
 import React from 'react';
 
 type person ={
-    name: string
+    name: string;
+    messages: number
 }
 
-const Name = (props: person) => {
+const Name = ({name, messages}: person) => {
     return (
         <div>
-            <h2>Hello {props.name}, welcome to the site.</h2>
+            <h2>Hello {name}, welcome to the site.</h2>
+            <p>You have {messages} unread message.</p>
         </div>
     );
 };
