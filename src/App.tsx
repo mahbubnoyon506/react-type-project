@@ -1,9 +1,14 @@
 import './App.css';
+import Button from './components/Button';
+import Counter from './components/Counter';
 import Guest from './components/Guest';
 import Header from './components/Header';
+import Input from './components/Input';
 import Name from './components/Name';
 import Oscar from './components/Oscar';
 import PersonList from './components/PersonList';
+import LoginState from './components/state/LoginState';
+import User from './components/state/User';
 // import Status from './components/Status';
 
 
@@ -36,6 +41,13 @@ function App() {
       <Oscar>
         <Header>Oscar goes to Lionardo</Header>
       </Oscar>
+      <Button handleClick={(event, id) => {
+        console.log('Clicked', event, id)
+      }} />
+      <Input value='' handleChange={(event) => console.log(event)} />
+      <LoginState />
+      <User />
+      <Counter />
     </div>
   );
 }
