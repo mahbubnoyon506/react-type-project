@@ -1,5 +1,7 @@
 import './App.css';
 import Button from './components/Button';
+import Box from './components/context/Box';
+import { ThemeContextProvider } from './components/context/ThemeContext';
 import Counter from './components/Counter';
 import Guest from './components/Guest';
 import Header from './components/Header';
@@ -9,6 +11,7 @@ import Oscar from './components/Oscar';
 import PersonList from './components/PersonList';
 import LoginState from './components/state/LoginState';
 import User from './components/state/User';
+import Status from './components/Status';
 // import Status from './components/Status';
 
 
@@ -36,7 +39,7 @@ function App() {
       <Name name='Mahbub Noyon' messages={20} isLoggedIn={true}></Name>
       <Guest name={personName} />
       <PersonList name={persons} />
-      {/* <Status status='success' /> */}
+      <Status status='success' />
       <Header> This is header </Header>
       <Oscar>
         <Header>Oscar goes to Lionardo</Header>
@@ -48,6 +51,9 @@ function App() {
       <LoginState />
       <User />
       <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 }
