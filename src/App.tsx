@@ -2,6 +2,8 @@ import './App.css';
 import Button from './components/Button';
 import Box from './components/context/Box';
 import { ThemeContextProvider } from './components/context/ThemeContext';
+import User from './components/context/User';
+import { UserContext, UserContextProvider } from './components/context/UserContext';
 import Counter from './components/Counter';
 import Guest from './components/Guest';
 import Header from './components/Header';
@@ -10,7 +12,7 @@ import Name from './components/Name';
 import Oscar from './components/Oscar';
 import PersonList from './components/PersonList';
 import LoginState from './components/state/LoginState';
-import User from './components/state/User';
+// import User from './components/state/User';
 import Status from './components/Status';
 // import Status from './components/Status';
 
@@ -49,11 +51,14 @@ function App() {
       }} />
       <Input value='' handleChange={(event) => console.log(event)} />
       <LoginState />
-      <User />
+      {/* <User /> */}
       <Counter />
       <ThemeContextProvider>
         <Box />
       </ThemeContextProvider>
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
     </div>
   );
 }
