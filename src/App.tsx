@@ -1,3 +1,4 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import { Private } from './components/auth/Private';
 import Profile from './components/auth/Profile';
@@ -17,10 +18,11 @@ import PersonList from './components/PersonList';
 import LoginState from './components/state/LoginState';
 // import User from './components/state/User';
 import Status from './components/Status';
+import routes from './routes/routes';
 // import Status from './components/Status';
 
 
-function App() {
+const App: React.FC = () => {
   const personName = {
     firstName: 'Mahbub',
     lastName: 'Noyon'
@@ -40,42 +42,47 @@ function App() {
     },
   ]
   return (
-    <div className="">
-      <Name name='Mahbub Noyon' messages={20} isLoggedIn={true}></Name>
-      <Guest name={personName} />
-      <PersonList name={persons} />
-      <Status status='success' />
-      <Header> This is header </Header>
-      <Oscar>
-        <Header>Oscar goes to Lionardo</Header>
-      </Oscar>
-      <Button handleClick={(event, id) => {
-        console.log('Clicked', event, id)
-      }} />
-      <Input value='' handleChange={(event) => console.log(event)} />
-      <LoginState />
-      {/* <User /> */}
-      <Counter />
-      <ThemeContextProvider>
-        <Box />
-      </ThemeContextProvider>
-      <UserContextProvider>
-        <User />
-      </UserContextProvider>
-      <Private isLoggedIn={true} component={Profile}  />
-      {/* <List items={['Apple', 'Orange', 'watermalloon']} onClick={(item => console.log(item))} />
-      <List items={[1, 2, 3]} onClick={(item => console.log(item))} /> */}
-      <List items={[
-        {
-          first: 'Mahbub',
-          last: 'Noyon'
-        },
-        {
-          first: 'Mahbub',
-          last: 'Noyon'
-        },
-      ]}  onClick={(item => console.log(item))}/>
+
+    <div>
+        <RouterProvider router={routes}/>
     </div>
+
+    // <div className="">
+    //   <Name name='Mahbub Noyon' messages={20} isLoggedIn={true}></Name>
+    //   <Guest name={personName} />
+    //   <PersonList name={persons} />
+    //   <Status status='success' />
+    //   <Header> This is header </Header>
+    //   <Oscar>
+    //     <Header>Oscar goes to Lionardo</Header>
+    //   </Oscar>
+    //   <Button handleClick={(event, id) => {
+    //     console.log('Clicked', event, id)
+    //   }} />
+    //   <Input value='' handleChange={(event) => console.log(event)} />
+    //   <LoginState />
+    //   {/* <User /> */}
+    //   <Counter />
+    //   <ThemeContextProvider>
+    //     <Box />
+    //   </ThemeContextProvider>
+    //   <UserContextProvider>
+    //     <User />
+    //   </UserContextProvider>
+    //   <Private isLoggedIn={true} component={Profile}  />
+    //   {/* <List items={['Apple', 'Orange', 'watermalloon']} onClick={(item => console.log(item))} />
+    //   <List items={[1, 2, 3]} onClick={(item => console.log(item))} /> */}
+    //   <List items={[
+    //     {
+    //       first: 'Mahbub',
+    //       last: 'Noyon'
+    //     },
+    //     {
+    //       first: 'Mahbub',
+    //       last: 'Noyon'
+    //     },
+    //   ]}  onClick={(item => console.log(item))}/>
+    // </div>
   );
 }
 
